@@ -1,0 +1,5 @@
+<%- include('partials/header',{title:'Log in'}) %>
+<div class="auth-shell"><div class="auth-visual"><span class="eyebrow">WELCOME BACK</span><h1>Every little moment,<br><em>worth remembering.</em></h1><div class="auth-big-icon">🐶</div><p>Your pet's favourite place is right here.</p></div>
+<section class="auth-card"><span class="eyebrow">YOUR SPACE</span><h2>Log in to petcare.</h2><p class="subtle">Pick up where you and your furry friend left off.</p>
+<form method="POST" action="/login" class="form-stack"><label>Username <input name="username" autocomplete="username" required placeholder="Your username"></label><label>Password <input name="password" type="password" autocomplete="current-password" required placeholder="Your password"></label><button class="btn btn-primary btn-block" type="submit">Log in →</button></form><p class="auth-switch">New to petcare? <a href="/signup">Create an account</a></p></section></div>
+<%- include('partials/footer') %>

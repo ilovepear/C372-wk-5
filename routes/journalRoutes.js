@@ -1,0 +1,12 @@
+const router=require('express').Router();
+const controller=require('../controllers/journalController');
+const {isLoggedIn}=require('../middleware/auth');
+router.get('/journals',isLoggedIn,controller.listJournals);
+router.get('/journals/search',isLoggedIn,controller.listJournals);
+router.get('/journals/export',isLoggedIn,controller.exportCsv);
+router.get('/journals/new',isLoggedIn,controller.newJournalForm);
+router.post('/journals/new',isLoggedIn,controller.createJournal);
+router.get('/journals/edit/:id',isLoggedIn,controller.editJournalForm);
+router.post('/journals/edit/:id',isLoggedIn,controller.updateJournal);
+router.post('/journals/delete/:id',isLoggedIn,controller.deleteJournal);
+module.exports=router;

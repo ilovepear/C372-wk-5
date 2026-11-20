@@ -1,0 +1,7 @@
+<%- include('partials/header',{title:journal?'Edit journal':'New journal'}) %>
+<div class="form-page"><div class="page-heading"><span class="eyebrow">PET JOURNALS</span><h1><%= journal ? 'Update a' : 'Capture a' %> <em>little moment.</em></h1><p>Keep a record of your pet's activities, milestones and wellbeing.</p></div>
+<form class="surface form-surface" method="POST" action="<%= formAction %>">
+<label>Choose your pet <select name="pet_id" required><option value="">Select your pet</option><% pets.forEach(function(p){ %><option value="<%= p.id %>" <%= Number(selectedPetId)===p.id?'selected':'' %>><%= p.name %></option><% }); %></select></label>
+<div class="field-grid"><label>Activity <input name="activity" maxlength="120" required value="<%= journal?.activity || '' %>" placeholder="e.g. Morning walk"></label><label>Date <input type="date" name="entry_date" required value="<%= journal?.entry_date || today %>"></label></div>
+<label>Notes <textarea name="notes" maxlength="3000" rows="5" placeholder="What happened today?"><%= journal?.notes || '' %></textarea></label><div class="button-row"><button type="submit" class="btn btn-primary"><%= journal ? 'Save changes' : 'Save entry' %> →</button><a class="btn btn-light" href="/journals">Cancel</a></div></form></div>
+<%- include('partials/footer') %>

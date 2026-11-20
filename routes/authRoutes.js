@@ -1,0 +1,12 @@
+const router=require('express').Router();
+const controller=require('../controllers/authController');
+const upload=require('../config/upload');
+const {isLoggedIn}=require('../middleware/auth');
+router.get('/signup',controller.signupForm);
+router.post('/signup',upload.single('pet_image'),controller.signup);
+router.get('/login',controller.loginForm);
+router.post('/login',controller.login);
+router.get('/logout',controller.logout);
+router.get('/profile',isLoggedIn,controller.profileForm);
+router.post('/profile',isLoggedIn,controller.updateProfile);
+module.exports=router;

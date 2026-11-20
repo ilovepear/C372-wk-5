@@ -1,0 +1,28 @@
+<%- include('partials/header',{title:'Home'}) %>
+<section class="hero">
+  <div>
+    <span class="eyebrow">YOUR PET'S WORLD, ALL IN ONE PLACE</span>
+    <h1>Good care starts<br><em>with the little things.</em></h1>
+    <p>From daily walks to grooming appointments, keep every happy moment and important reminder together.</p>
+    <div class="button-row">
+      <% if (session && session.user) { %>
+        <a class="btn btn-primary" href="/dashboard">Open my dashboard <span>→</span></a>
+        <a class="btn btn-light" href="/journals">View journals</a>
+      <% } else { %>
+        <a class="btn btn-primary" href="/signup">Create free account <span>→</span></a>
+        <a class="btn btn-light" href="/login">I have an account</a>
+      <% } %>
+    </div>
+    <div class="hero-notice">✦ Pet journals &nbsp; ✦ Care reminders &nbsp; ✦ Service booking</div>
+  </div>
+  <div class="hero-art" aria-hidden="true"><div class="hero-art-glow"></div><div class="hero-paw">🐾</div><div class="floating-tile tile-a">☀️ <small>Walk time!</small></div><div class="floating-tile tile-b">💗 <small>Every moment matters</small></div><div class="floating-tile tile-c">✿ <small>Care made easy</small></div></div>
+</section>
+<section class="section-space">
+  <div class="section-intro"><span class="eyebrow">MADE FOR PET PARENTS</span><h2>Everything they need, <em>beautifully organised.</em></h2></div>
+  <div class="feature-grid">
+    <article class="feature-card"><span class="feature-symbol peach">📔</span><h3>Memory-filled journals</h3><p>Record vet visits, playtime and little milestones. Filter and export your memories anytime.</p></article>
+    <article class="feature-card"><span class="feature-symbol lavender">✂️</span><h3>Simple service bookings</h3><p>Find pet care services with upfront prices and track each booking in one place.</p></article>
+    <article class="feature-card"><span class="feature-symbol sage">🔔</span><h3>Gentle reminders</h3><p>Stay on top of grooming, medication schedules and future care tasks.</p></article>
+  </div>
+</section>
+<%- include('partials/footer') %>

@@ -1,0 +1,4 @@
+<%- include('partials/header',{title:'Admin dashboard'}) %>
+<div class="page-heading"><span class="eyebrow">ADMIN WORKSPACE</span><h1>Community <em>overview.</em></h1><p>Admin-only tools for managing petcare customer accounts.</p></div>
+<section class="surface admin-welcome"><span class="feature-symbol lavender">🛡️</span><div><h2>Welcome, <%= session.user.name %>.</h2><p>Review registered customer accounts and their pet journal histories.</p></div><a class="btn btn-primary" href="/admin/users">Manage users →</a></section>
+<%- include('partials/footer') %>

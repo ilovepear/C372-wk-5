@@ -1,0 +1,11 @@
+const router=require('express').Router();
+const controller=require('../controllers/petController');
+const {isLoggedIn}=require('../middleware/auth');
+const upload=require('../config/upload');
+router.get('/pets/new',isLoggedIn,controller.newPetForm);
+router.post('/pets',isLoggedIn,upload.single('pet_image'),controller.createPet);
+router.get('/pets/:id',isLoggedIn,controller.petDetails);
+router.get('/pets/:id/edit',isLoggedIn,controller.editPetForm);
+router.post('/pets/:id/edit',isLoggedIn,upload.single('pet_image'),controller.updatePet);
+router.post('/pets/:id/delete',isLoggedIn,controller.deletePet);
+module.exports=router;
